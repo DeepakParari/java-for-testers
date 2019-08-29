@@ -1,6 +1,6 @@
 package exercises;
 
-import dataentities.Car;
+import examples.Car;
 import org.junit.*;
 
 public class ReadyTest {
