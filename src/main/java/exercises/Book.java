@@ -21,7 +21,7 @@ public class Book {
     // Add a no-argument constructor
     // Specify a default value for each property
 
- 
+
     /* 3 */
 
     // Write a method that sets the year of publishing to the current year
