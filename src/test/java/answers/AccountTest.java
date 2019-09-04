@@ -30,7 +30,7 @@ public class AccountTest {
         Assert.assertEquals(1500, account.getBalance());
     }
 
-    @Test
+    @Test(expected = Exception.class)
     public void withdraw1100FromAccount_shouldThrowException() throws Exception {
 
         // Arrange - create a new account with a balance of 1000
