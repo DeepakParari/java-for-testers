@@ -1,4 +1,4 @@
-package wiremock;
+package wiremock.answers;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
 

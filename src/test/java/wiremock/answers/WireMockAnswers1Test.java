@@ -1,4 +1,4 @@
-package wiremock;
+package wiremock.answers;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
