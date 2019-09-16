@@ -15,7 +15,7 @@
         <pitest.version>1.4.10</pitest.version>
         <restassured.version>4.1.1</restassured.version>
         <wiremock.version>2.24.1</wiremock.version>
-        <jackson.databind.version>2.9.8</jackson.databind.version>
+        <jackson.databind.version>2.9.9.2</jackson.databind.version>
     </properties>
     <dependencies>
         <dependency>
