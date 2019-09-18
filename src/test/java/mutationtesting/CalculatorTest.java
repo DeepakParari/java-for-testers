@@ -33,4 +33,10 @@ public class CalculatorTest {
 		Calculator calculator = new Calculator();
 		Assert.assertEquals(calculator.setConditional(3, false), false);
 	}
+	@Test
+	public void testSubtract(){
+		Calculator calculator = new Calculator();
+		calculator.subtract(2);
+		Assert.assertEquals(calculator.getResult(), -2);
+	}
 }

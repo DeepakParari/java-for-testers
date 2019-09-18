@@ -34,7 +34,7 @@ public class Calculator {
 
 	public boolean setConditional(int x, boolean yesOrNo) {
 		if(yesOrNo) {
-			set(x);
+			//set(x);
 			return true;
 		} else {
 			return false;
