@@ -38,11 +38,12 @@ public class RestAssuredExercises3Test {
 	
 	@Test
 	public void postCarObject_checkResponseHttpStatusCode_expect200() {
-
+		Car car = new Car("Ford","Focus","blue");
 		given().
 			spec(requestSpec).
-		when().
-		then();
+				body(car).
+		when().post("/car/postcar").
+		then().assertThat().statusCode(200);
 	}
 
 	/*******************************************************
@@ -56,8 +57,10 @@ public class RestAssuredExercises3Test {
 	@Test
 	public void getCarObject_checkColor_expectRed() {
 
-		given().
+		Car myCar =given().
 			spec(requestSpec).
-		when();
+		when().get("/car/getcar/alfaromeogiulia").
+		as(Car.class);
+		Assert.assertEquals("red",myCar.getColor());
 	}
 }

@@ -1,6 +1,7 @@
 package restassured;
 
 import com.github.tomakehurst.wiremock.junit.WireMockRule;
+import com.sun.javafx.binding.StringFormatter;
 import com.tngtech.java.junit.dataprovider.*;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
@@ -35,7 +36,15 @@ public class RestAssuredExercises2Test {
 	 * us           - 12345    - New York
 	 * ca           - Y1A      - Yukon
 	 ******************************************************/
+	@DataProvider
+	public static Object[][]zipCodeDataProvider(){
+		return new Object[][]{
+				{"us","90210","California"},
+				{"us","12345","New York"},
+				{"ca","Y1A","Yukon"},
 
+		};
+	}
 
 
 	/*******************************************************
@@ -48,11 +57,18 @@ public class RestAssuredExercises2Test {
 	 ******************************************************/
 
 	@Test
-	public void checkStateForCountryCodeAndZipCode() {
+	@UseDataProvider("zipCodeDataProvider")
+	public void checkStateForCountryCodeAndZipCode(String countryCode, String zipCode, String expectedState) {
 
 		given().
 			spec(requestSpec).
+				and().
+				pathParam("countryCode", countryCode).
+				pathParam("zipCode",zipCode).
 		when().
-		then();
+				get("/{countryCode}/{zipCode}").
+		then().
+				assertThat().
+				body("places[0].state",equalTo(expectedState));
 	}
 }

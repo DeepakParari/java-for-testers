@@ -37,7 +37,7 @@ public class RestAssuredAnswers1Test {
 			spec(requestSpec).
 		when().
 			get("/us/90210").
-		then().
+		then().log().all().
 			assertThat().
 			statusCode(200);
 	}

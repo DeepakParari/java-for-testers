@@ -65,7 +65,7 @@ public class RestAssuredAnswers2Test {
 			pathParam("zipCode", zipCode).
 		when().
 			get("/{countryCode}/{zipCode}").
-		then().
+		then().log().all().
 			assertThat().
 			body("places[0].state",equalTo(expectedState));
 	}
